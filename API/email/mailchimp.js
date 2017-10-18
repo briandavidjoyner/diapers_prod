@@ -1,6 +1,6 @@
 var MailChimpAPI = require('../../node_modules/mailchimp-api/mailchimp');
-var apiKey = 'ff907b8b979aed9c66ebf1852e62c181-us15';
-var list_id = 'ccc3e941d2';
+var apiKey = XYZ;
+var list_id = XYZ;
 var mailchimp = new MailChimpAPI.Mailchimp(apiKey);
 var Promise = require('promise');
 

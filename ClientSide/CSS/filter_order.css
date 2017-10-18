@@ -1,0 +1,113 @@
+#fo_container{
+	display: table;
+	width:100%;
+}
+.fo_orderContainer{
+	display: inline-block;
+	width:40%;
+	height:200px;
+	float:left;
+	background-color: rgba(127,255,212,1);
+}
+.fo_filterContainer{
+	display: inline-block;
+	position: relative;
+	//width:60%;
+	width:100%;
+	//height:200px;
+	float:right;
+	background-color: rgba(127,161,255,1);
+}
+.fo_sizesContainer{
+	position: relative;
+	top: 50%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
+.fo_orderButton{
+	position: relative;
+	display: inline-block;
+	height:150px;
+	width:150px;
+	margin: 25 10 0 10;
+    border-color: transparent;
+    background-color: red;
+    color: white;
+}
+.fo_orderButtonText{
+//	padding-top: 55px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: relative;
+}
+.fo_filterTextContainer{
+	top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: relative;
+}
+.fo_filterButton{
+	display: inline-block;
+	height:75px;
+	width:75px;
+	margin: 10 10 10 10;
+    border-color: transparent;
+    background-color: blue;
+    color: white;
+}
+.fo_filterButtonText{
+	top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: relative;
+}
+.heavy{
+	font-size: 1.5em;
+	font-weight: bold;
+}
+
+@media screen and (max-width: 900px) {
+	//#fo_container{
+	//	height:205px;
+	//}
+	.fo_orderContainer{
+		width:20%;
+		height:205px;
+	}
+	.fo_filterContainer{
+		width:100%;
+		//height:205px;
+	}
+	.fo_orderButton{
+	//	width:40%;
+		margin: 15 10 0 10;
+	}
+	.fo_orderButton{
+		height: 80px;
+		width:80px;
+	}
+	.fo_filterButton{
+		font-size: .75em;
+	}	
+}
+
+@media screen and (max-width: 505px) {
+	.fo_orderContainer{
+		width:30%;
+	}
+	.fo_filterContainer{
+		width:100%;
+	}
+	.fo_orderContainer,.fo_filterContainer{
+		//height: 200px;
+	}
+	.fo_orderButton{
+		height: 50px;
+		width:50px;
+	}
+	.fo_filterButton{
+		height: 75px;
+		width:75px;	
+	}
+}

@@ -1,0 +1,15 @@
+<div id="rd_items_container">
+	<div id="rd_item_block" ng-repeat="item in items | filter : filterSequence | orderBy : 'pricePerUnit'">
+		<img id="rd_image" ng-src={{item.image}} alt="Size {{item.size}} {{item.brand | capitalize}} Diapers">
+		<div id="rd_item_name" class="rd_item_strong">Size {{item.size}}<span class="rd_item_grey"> | </span>{{item.brand | capitalize}}<span class="rd_item_grey"><br></span>${{item.pricePerUnit}} Per Diaper
+		</div>
+		<div id="rd_item_details">Total Price:<span class="rd_item_details_weak"> {{item.price}}</span><br>Total Items:<span class="rd_item_details_weak"> {{item.units}} </span>
+		</div>
+		<div id="rd_buy_button">
+			<a href="#"><div id="rd_buy_button_text" ng-click="ga_event(item.vendor,item.url);click_out(item.brand,item.size);bing_conversion();">
+				<div id="rd_button">See Item On {{item.vendor}}</div>
+			</div></a>
+			<hr>
+		</div>
+	</div>
+</div>

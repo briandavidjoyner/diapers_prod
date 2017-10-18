@@ -1,0 +1,116 @@
+#filter_tool_container{
+	position:fixed;
+	display:none;
+	bottom:0;
+	width:100%;
+	margin-left:-8px;
+}
+
+#filter_tool_inner_container{
+	position:fixed;
+	bottom:0;
+	width:100%;
+	min-height:6vh;
+}
+
+.filter_selection{
+	background-color: rgb(120,142,199)!important;
+	color: white!important;
+}
+
+@media screen and (max-width: 600px) {
+
+	/* Removing Current Size Selection Tool From Mobile */
+	.header_5{
+		display:none!important;
+	}
+
+	#filter_tool_container{
+		display:inherit;
+	}
+		
+	#filter_up_arrow{
+		width:0;
+		position:relative;
+		top:4vh;
+		z-index:2;
+		margin-left: auto;
+	    margin-right: auto;
+	    border-left: 4vh solid transparent;
+  		border-right: 4vh solid transparent;
+  		border-bottom: 4vh solid rgb(252,160,6);
+	}
+
+	#filter_down_arrow{
+		width:0;
+		position:relative;
+		top: 14vh;
+		z-index:2;
+		margin-left: auto;
+	    margin-right: auto;
+	    border-left: 4vh solid transparent;
+  		border-right: 4vh solid transparent;
+  		border-top: 4vh solid rgb(252,160,6);
+	}
+	
+	#filter_mobile{
+		bottom:0;
+		height:10vh;
+		width:100%;
+		background-color:rgb(252,160,6);
+	}
+
+	#filter_mobile_down_messaging_container{
+		display: table-cell;
+	    text-align: center;
+	    vertical-align: middle;
+	    width: 90vh;
+	    height: 10vh;
+	}
+
+	#filter_mobile_down_messaging{
+		font-weight:bold;
+    	color:white;
+    	font-size:1.25em;
+    	padding-top:.25em;
+
+	}
+
+	#filter_mobile_expanded_container{
+		background-color:white;
+		//background-color:rgb(252,160,6);
+		width:100%;
+		height:90vh;
+	}
+
+	#filter_mobile_size_option_container{
+		display:inline-block;
+		width:50vw;
+	}
+
+	#filter_mobile_size_option_circle{
+		width: 25vw;
+    	height: 25vw;
+    	border-radius: 50%;
+    	border:solid;
+    	border-color: rgb(120,142,199);
+    	margin: 25 10 10 10;
+    	margin-left: auto;
+    	margin-right: auto;
+    	color:rgb(120,142,199);
+	}
+
+	#filter_mobile_size_text{
+		padding:10 5 5 5;
+	    text-align: center;
+	    display: table-cell;
+	    width: 25vw;
+	    height: 25vw;
+	    vertical-align: middle;
+	}
+
+	#filter_mobile_size_details_text{
+		text-align:center;
+	}
+
+}

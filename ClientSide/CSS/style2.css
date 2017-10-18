@@ -1,0 +1,280 @@
+body {
+	//font-family: 'Baloo Bhaina', cursive;
+	font-family: 'NTR', sans-serif;
+	line-height: 100%;
+	background-color: white;
+}
+a {
+	text-decoration:none;
+	color: rgb(120,142,199);
+}
+h1{
+	line-height:100%;
+}
+
+/*Page Components*/
+#container{
+	background-color: rgb(120,142,199);
+	max-width: 1000px;
+}
+#header{
+	width:100%;
+	padding-top:3%;
+	padding-bottom: 3%;
+	text-align:center;
+}
+#prehead_container{
+	background-color:white;
+	padding:10 0 10 2;
+	display:table;
+	width:100%;
+	color:rgb(120,142,199);;
+}
+#prehead{
+	font-size:1.25em;
+	display:table-cell;
+	vertical-align:middle;
+}
+#main_content{
+	text-align: center;
+}
+#product_block{
+	vertical-align: top;
+	text-align:center;
+	display:inline-block;
+}
+#product_container{
+	height:305px;
+	width:250px;
+	border-style: solid;
+	border-color: white;
+	//border-radius: 30px;
+	background-color: white;
+	margin: 20 20 20 20;
+	text-align:center;
+	display: inline-block;
+	border-radius: 10%;
+}
+#cta{
+	display: table;
+	//background-color:rgb(120,142,199);
+	background-color:rgb(252,160,6);
+	height:60px;
+	width:230px;
+	margin-top:15px;
+	margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+}
+#cta_text{
+	display: table-cell;
+	vertical-align: middle;
+	color:white!important;
+	padding-top:2%;
+	font-weight:900;
+}
+#product_a{
+	float:left;
+	text-align:left;
+	margin-left:3%;
+	margin-top:7%;
+	color:rgb(120,142,199);
+}
+#product_price{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 1em;
+  line-height: 1em;
+  text-align: center;
+  background: rgb(252,160,6);
+  float:right;
+  margin-right:2%;
+  margin-top:2%;
+}
+#product_price_text{
+	font-weight:bold;
+	padding-top:10px;
+	color:white!important;
+}
+#size_repeat{
+	text-align:center;
+	display:inline-block;
+}
+#image_container{
+	height:160px;
+	width:160px;
+	margin-top:27%;
+}
+#footer{
+	width:100%;
+	text-align:center;
+}
+#footer_graphic{
+	width:95%;
+}
+/*Element Styles*/
+.centered{
+	margin-right: auto;
+	margin-left:auto;
+	text-align:center;
+}
+.text_center{
+	text-align:center;
+}
+.border{
+	//border-color: white;
+	//border-style: solid;
+	//border-radius: 10px;
+	//margin-left: auto;
+    //margin-right: auto;
+    //width:90%;
+}
+.save_right{
+	float: right;
+    margin-right: 3%;
+    margin-top: -2%;
+}
+.header_3{
+	padding-top:3%;
+	max-width:650px;
+	margin-left:auto;
+	margin-right:auto;
+}
+.header_5{
+	padding-top:5%;
+	padding-bottom:2%;
+	text-align: center;
+}
+.price{
+	font-weight:bold;
+	font-size:2em;
+	color:rgb(252,160,6);
+}
+.product_image{
+	text-align: center;
+	margin-top:3%;
+	margin-left: 28%;
+	max-height:160px;
+	max-width: 160px;
+}
+.size{
+	display:inline-block;
+	color:white;
+	padding:0 10 0 10;
+}
+.left{
+	float:left;
+}
+.right{
+	float:right;
+}
+.mobile{
+	display:none;
+}
+#mobile_options{
+	display:none;
+}
+
+
+/* About Page */
+#about_text{
+	padding: 10 50 10 50;
+	color:white;
+}
+.about_images{
+	width:100%;
+	text-align:center;
+}
+.about_small{
+	max-width:300px;
+	padding:5 5 5 5;
+}
+.about_large{
+	max-width:610px;
+	padding:5 5 5 5;
+}
+
+
+/* Responsive */
+
+
+
+@media screen and (max-width: 775px) {
+	h1{
+		font-size:1.5em;
+	}
+	.header_3{
+		text-align:center;
+	}
+	.logo{
+		//width:300px;
+	}
+	.save_right{
+		display:none;
+	}
+	#cta_text{
+		font-size:.9em;
+	}
+	.size{
+		font-size:.75em;
+	}
+	.size_image{
+		width:75px;
+	}
+	.right{
+		display:none;
+	}
+	.about_large{
+		max-width:300px;
+	}
+
+}
+
+@media screen and (max-width: 610px){
+	#prehead{
+		padding-left:3%;
+		float:left;
+		//width:70%;
+		font-size:1em;
+	}
+	#footer{
+		padding-bottom:6vh;
+	}
+	#footer_graphic{
+		margin-top:0;
+	}
+	#mobile_options{
+		display:block;
+	}
+	.footer_options{
+		display:table;
+    	height:100%;
+    	width:100%;
+	}
+	.mobile_footer_button{
+		display:inline-block;
+		background-color:white;
+		height:40px;
+		width:125px;
+		border-radius:10px;
+	}
+	.footer_option_text{
+		color:rgb(120,142,199);;
+		display:table-cell;
+		vertical-align:middle;
+		padding-top:4%;
+	}
+	.desktop{
+		display:none;
+	}
+	.mobile{
+		margin-right:auto;
+		margin-left:auto;
+		margin-top:-15%;
+		display:initial;
+	}
+	.logo{
+		width:95%;
+	}
+}

@@ -1,0 +1,20 @@
+<div id="filter_tool_container">
+	<div id="filter_tool_inner_container">
+	  <div id="filter_up_arrow"></div>
+	  <div id="filter_down_arrow"></div>
+	  <div id="filter_mobile">
+	    <div id="filter_mobile_down_messaging_container">
+	    	<a href="#" ng-click="ft_toggle();"><div id="filter_mobile_down_messaging">Click To Update The Filter</div></a>
+	  	</div>
+	  	<div id="filter_mobile_expanded_container">
+	  		<div ng-repeat="size in sizes" id="filter_mobile_size_option_container">
+	  			<a href="#"><div id="filter_mobile_size_option_circle" ng-click="filter(size.size);selection($event);">
+	  				<div id="filter_mobile_size_text">Size {{size.size}}</div>
+	  			</div></a>
+	  			<div id="filter_mobile_size_details_text">{{size.weight}}</div>
+	  		</div>
+	  	</div>
+	  </div>
+	  <div id="filter_desktop"></div>
+	</div> 
+</div> 

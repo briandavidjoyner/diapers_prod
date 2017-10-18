@@ -1,0 +1,25 @@
+<div id="email_capture_container">
+	<div id="email_capture_background">
+		<div id="email_form_container">
+			<div id="email_form_content">
+				<div id="email_logo"><img class="email_fit" src="/graphics/logo.png"></div>
+				<div id="email_content">Access Our<br><span class="email_important">Members Only<br>Diaper Deals</span></div>
+				<form>
+					<div id="email_form">
+						<input id="email_form_email" type="text" name="email" placeholder="Enter Your Email..." ng-model="emailAddress.address">
+					</div>
+					<div id="email_form_button">
+						<a href="#"><div id="email_capture_button" ng-click="submit();">
+							<div class="email_button error_message">Get The Best Deals</div>
+						</div></a>
+					</div>
+				</form>
+				<div id="email_form_button">
+					<a href="#"><div id="email_capture_close" ng-click="close();">
+						<div class="email_button no_thanks">I'd Rather Pay More For Diapers</div>
+					</div></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

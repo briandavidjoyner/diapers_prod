@@ -1,0 +1,153 @@
+/*Deprecated 6.10.2017*/
+
+#email_capture_container{
+	display:none;
+	position:fixed;
+	top:0px;
+    left:0px;
+	width:100%;
+	height:100%;
+	background-color:rgba(0,0,0,.7);
+	z-index:10000000000;
+}
+
+#email_capture_creative{
+	position: fixed;
+  	top:50%;
+  	left:50%;
+  	transform:translate(-50%, -50%);
+	width:100%;
+	height:550px;
+	background-color:white;
+	z-index:10000000001;
+}
+
+#email_capture_content_holder{
+	width:1000px;
+	height:100%;
+	margin:auto;
+	display:table;
+}
+
+#email_capture_content{
+	display:table-cell;
+	vertical-align:middle;
+}
+
+#email_capture_logo{
+	display:table;
+	margin:auto;
+}
+
+#email_capture_click_data{
+	text-align:center;
+	padding-top:20px;
+	font-size:2em;
+	line-height:100%;
+}
+
+#email_capture_button_container{
+	display: table;
+	margin:auto;
+	width:500px;
+	padding-top:10px;
+}
+
+#email_form{
+	width:100%;
+	height:60px;
+	font-size:2em;
+	color:black;
+	text-align:center;
+}
+
+
+/*Classes*/
+.email_important{
+	color:rgb(120,142,199);
+	font-size:3em;
+	line-height:100%;
+}
+
+.email_capture_button{
+	display:inline-block;
+	width:100%;
+}
+
+.email_button{
+	border-width:5px;
+    border-color:rgb(252,160,6);
+    border-style:solid;
+	padding-top:5px;
+	display:table-cell;
+	vertical-align:middle;
+	text-align:center;
+	background-color:rgb(252,160,6);
+	height:60px;
+	width:500px;
+	margin-top:15px;
+	margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    font-size:2em;
+    color:white;
+}
+
+.no_thanks{
+	background-color:white;
+	border-style:solid;
+	border-width:5px;
+	border-color:rgb(252,160,6);
+	color:rgb(252,160,6);
+}
+
+.bottom{
+	margin-top:-15px;
+}
+
+
+@media screen and (max-width: 775px) {
+	#email_capture_logo{
+		text-align:center;
+	}
+
+	#email_capture_creative{
+		background-color:transparent;
+		height:90%;
+	}
+
+	#email_capture_content_holder{
+		background-color:white;
+		width:90%;
+	}
+
+	#email_capture_click_data{
+		width:80%;
+		margin:auto;
+		font-size:1.5em;
+	}
+
+	#email_form{
+		width:300px;
+		font-size:1.25em;
+		width:100%;
+		border-style: solid;
+	    border-color: darkgray;
+	}
+
+	#email_capture_button_container{
+		width:80%;
+	}
+	.email_button{
+		width:300px;
+		font-size:1.25em;
+	}
+
+	.email_important{
+		font-size:2.5em;
+	}
+
+	.email_logo{
+		width:80%;
+	}
+}

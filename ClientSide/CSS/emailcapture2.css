@@ -1,0 +1,127 @@
+/*Email Capture Container*/
+#email_capture_container{
+	display:none;
+}
+
+#email_capture_background{
+    background-color: rgba(0,0,0,.7);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index:3;
+}
+
+#email_form_container{
+    width: 80%;
+    position: relative;
+    height: 90%;
+    //background-color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#email_form_content{
+	position:absolute;
+	padding:5% 5% 5% 5%;
+	background-color:white;
+	width:80%;
+	max-width:800px;
+	margin-left:auto;
+	margin-right:auto;
+	top: 50%;
+    left: 50%;
+	transform: translate(-50%, -50%);
+	border-radius:5px;
+}
+
+/*Email Capture Content*/
+#email_logo{
+}
+
+#email_content{
+text-align:center;
+padding-top:10%;
+font-size: 1.5em;	
+}
+
+#email_form{
+	padding-top:10%;
+}
+
+#email_form_email{
+	width:100%;
+	height:8vh;
+	border-style:solid;
+	border-radius:5px;
+	text-align:center;
+}
+
+#email_form_button{
+	display:table;
+	width:100%;
+	text-align:center;
+	padding-top:10%;
+}
+
+#email_capture_button{
+    border-width: 5px;
+    border-color: rgb(252,160,6);
+    border-style: solid;
+    padding-top: 5px;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    background-color: rgb(252,160,6);
+    height: 60px;
+    width: 80%;
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    font-size: 1.5em;
+    color: white;
+}
+
+.email_fit{
+	width:100%;
+}
+
+.email_important{
+	color:rgb(120,142,199);
+	font-size:1.75em;
+	line-height:100%
+}
+
+/* Less Than 600px */
+
+@media screen and (max-width: 600px) {
+}
+
+/* Over 1100px */
+@media screen and (min-width: 1100px) {
+	#email_form_container{
+		height:50%;
+	}
+	#email_content{
+		padding-top:5%;
+		font-size:2.5em; 
+	}
+	#email_form{
+		padding-top:5%;
+	}
+	#email_form_email{
+		font-size:2em; 
+	}
+	#email_form_button{
+		padding-top:5%;
+	}
+	#email_capture_button{
+		width:25%;
+		font-size:2.5em;
+		padding-top:12px;
+		height:100px;
+	}
+}

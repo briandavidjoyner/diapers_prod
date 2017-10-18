@@ -1,0 +1,15 @@
+<div id="header">
+	<div class="border">
+		<div class="header_3">
+			<a href="#" ng-click="filter();opacity($event);"><img class="desktop logo" src="/graphics/logo.png" alt="Diapersdiapers.com logo" title="Find the best deals on diapers from the top online retailers"></a>
+			<a href="#" ng-click="filter();opacity();"><img class="mobile logo" src="/graphics/logo_mobile.png" alt="Diapersdiapers.com logo" title="Find the best deals on diapers from the top online retailers"></a>
+			<img class="save_right" src="/graphics/save.png" alt="Save hundreds of dollars on diapers">
+		</div>
+		<div class="header_5 centered">
+			<a href="#" ng-repeat="size in sizes"><div class="size" ng-click="filter(size.size);">
+				<img class="size_image" ng-src="{{size.image}}" align="middle" alt="Search for size {{size.size}} sized diapers">
+				<div>Size {{size.size}}<br>{{size.weight}}</div>
+			</div></a>
+		</div>
+	</div>
+</div>

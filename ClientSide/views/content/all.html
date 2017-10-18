@@ -1,0 +1,35 @@
+<div ng-controller="all" id="container" class="center">
+	<div class="center">
+		<div class="infoText center">Find the best deals on diapers from the top online retailers.  We've built a way to search and filter diaper deals in real time, making it easy to find the best prices on diapers without having to spend time searching!</div>
+	</div>
+	<br>
+	<div id ="fo_container">
+		<div class="fo_filterContainer">
+			<div class="fo_sizesContainer">
+				<a href="{{url}}"><div class="fo_filterButton" ng-repeat="x in sizes" ng-click="filter(x); opacity($event);">
+					<div class="fo_filterButtonText">Size<br>{{x}}</div>
+				</div></a>
+			</div>
+		</div>
+	</div>
+	<div id="header">
+		<div id="headerText"><a href="{{url}}" ng-click="filter(); opacity();">Show All Items</a></div>
+	</div>
+	<div id="pc_product_container" class="pc_center" ng-repeat="item in items | filter : {'size' : filterSequence} | orderBy : 'pricePerUnit'">
+		<div class="pc_imageContainer pc_z">	
+			<div id="pc_image"><img class="pc_center" ng-src={{item.image}}></div>
+		</div>
+		<div class="pc_z">Size {{item.size}} Diapers From {{item.brand}}</div>
+		<div class="pc_details pc_left">
+			<div class="pc_down middle pc_pricing">${{item.pricePerUnit}} Per Item<br><span class="pc_detailsMinor">({{item.price}} For {{item.units}} Diapers)</span></div>
+		</div>
+		<div class="pc_details pc_right" ng-mouseover="highlight($event)" ng-mouseleave="return($event)">
+			<a href={{item.url}} target="_blank" ng-click="ga_event(item.vendor)"><div class="pc_down pc_middle pc_button">Buy Now</div></a>
+		</div>
+	</div>
+	<footer>
+		<hr>
+		<div class="center">Last API Call Was {{updateTime}}</div>
+	</footer>	
+	</div>
+</div>

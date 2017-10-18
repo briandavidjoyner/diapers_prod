@@ -1,0 +1,110 @@
+<div id="rd_content_holder">
+
+	<div id="rd_content_full_width">
+		<div class="rd_content_full_width_container">
+			<h2>{{brandInfo}}</h2>
+		</div>
+	</div>
+
+
+
+	<!-- Does Not Hide On Menu Dropdown -->
+	<div class="rd_content_blue" id="rd_content_container">
+		<div class="rd_centered rd_line_height" id="rd_content">
+			<img class="rd_diaper_image" src="/public/graphics/diaper.svg">
+			<h1>We Find The Best Deals On Pampers Diapers</h1>
+			<p class="rd_line_height"> Pampers Swaddlers, Pampers Swaddlers Sensitive Diapers, Pampers Cruisers, Pampers Baby Dry, Pampers Simply Dry, Pampers Easy Ups Training Underwear, Pampers UnderJams Absorbent Night Wear for Girls & Boys, and Pampers Splashers.  Honestly, it's alphabet soup.  What you really care about; keeping that new kid of your's dry and happy for the best price possible.  And that's what we do.  We search Amazon, Walmart, and some other big retailers for the best deals in Pampers diapers.</p>
+		</div>
+	</div>
+	<div id="rd_content_full_width">
+		<div class="rd_content_full_width_container">
+			<h2>We Find Hidden Pampers Diapers Deals Across The Internet.</h2>
+		</div>
+	</div>
+	<!--items module - copy over until you figure this out -->
+	<div id="rd_items_container">
+	<div id="rd_item_block" ng-repeat="item in items | filter : {'brand' : 'Pampers'} | orderBy : 'pricePerUnit'">
+		<img id="rd_image" ng-src={{item.image}} alt="Size {{item.size}} {{item.brand | capitalize}} Diapers">
+		<div id="rd_item_name" class="rd_item_strong">Size {{item.size}}<span class="rd_item_grey"> | </span>{{item.brand | capitalize}}<span class="rd_item_grey"><br></span>${{item.pricePerUnit}} Per Diaper
+		</div>
+		<div id="rd_item_details">Total Price:<span class="rd_item_details_weak"> {{item.price}}</span><br>Total Items:<span class="rd_item_details_weak"> {{item.units}} </span>
+		</div>
+		<div id="rd_buy_button">
+			<a href="#"><div id="rd_buy_button_text" ng-click="ga_event(item.vendor,item.url);click_out(item.brand,item.size);bing_conversion();">
+				<div id="rd_button">See Item On {{item.vendor}}</div>
+			</div></a>
+			<hr>
+		</div>
+	</div>
+	</div>
+	<!-- back to template -->
+	<div id="rd_content_full_width">
+		<div class="rd_content_full_width_container">
+			<h2>What Size Pampers' Diaper Does Your Bundle Of Joy Need?</h2>
+		</div>
+	</div>
+	<div class="rd_left" id="rd_content_block">
+		<div class="rd_content_block_table">
+			<div class="rd_centered rd_line_height" id="rd_content">
+				<img class="rd_diaper_image_large" src="/public/graphics/diaper_black.svg">
+				<h2>Pampers Diaper Size Chart</h2>
+				<p>Need a little help figuring out what size Pamper's diaper your little one needs?  Here's what the people at Pamper's suggest.<p>  
+			</div>
+		</div>
+	</div>
+	<div class="rd_right rd_content_blue rd_image" id="rd_content_block">
+		<div class="rd_content_block_table">
+			<div class="rd_centered rd_line_height">
+				<!-- New Chart -->
+				<table class="rd_size_table">
+						<tr>
+							<td class="rd_size_table_cell rd_size_table_head"><h2>Pampers Size</h2></td>
+							<td class="rd_size_table_cell rd_size_table_head"><h2>US Pounds</h2></td>
+							<td class="rd_size_table_cell rd_size_table_head"><h2>Metric Kilograms</h2></td>
+						</tr>
+						<tr>
+							<td class="rd_size_table_cell">Pampers Premmie</td>
+							<td class="rd_size_table_cell">0 - 6 lbs</td>
+							<td class="rd_size_table_cell">0 - 3 kg</td>
+						</tr>
+						<tr>
+							<td class="rd_size_table_cell">Pampers Newborn</td>
+							<td class="rd_size_table_cell">0 - 10 lbs</td>
+							<td class="rd_size_table_cell">0 - 4 kg</td>
+						</tr>
+						<tr>
+							<td class="rd_size_table_cell">Pampers Size 1</td>
+							<td class="rd_size_table_cell">8 - 14 lbs</td>
+							<td class="rd_size_table_cell">3 - 6 kg</td>
+						</tr>
+						<tr>
+							<td class="rd_size_table_cell">Pampers Size 2</td>
+							<td class="rd_size_table_cell">12 - 18 lbs</td>
+							<td class="rd_size_table_cell">5 - 8 kg</td>
+						</tr>
+						<tr>
+							<td class="rd_size_table_cell">Pampers Size 3</td>
+							<td class="rd_size_table_cell">16 - 28 lbs</td>
+							<td class="rd_size_table_cell">7 - 13 kg</td>
+						</tr>
+						<tr>
+							<td class="rd_size_table_cell">Pampers Size 4</td>
+							<td class="rd_size_table_cell">22 - 37 lbs</td>
+							<td class="rd_size_table_cell">10 - 17 kg</td>
+						</tr>
+						<tr>
+							<td class="rd_size_table_cell">Pampers Size 5</td>
+							<td class="rd_size_table_cell">27+ lbs</td>
+							<td class="rd_size_table_cell">12+ kg</td>
+						</tr>
+				</table>
+				<!-- End Of Chart -->
+			</div>
+		</div>
+	</div>
+		<div id="rd_content_full_width">
+		<div class="rd_content_full_width_container">
+			<h2>Why Should I Use Your Site To Find Pampers Diapers?</h2>
+		</div>
+	</div>
+</div>

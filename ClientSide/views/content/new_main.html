@@ -1,0 +1,16 @@
+<div id="main_content">
+	<div ng-repeat="item in items | filter : {'size' : filterSequence} | orderBy : 'pricePerUnit'" id="product_block">
+		<a href="#" ng-click="ga_event(item.vender,item.url);click_out(item.brand,item.size);bing_conversion();"><div id="product_container">
+			<div id="product_a"><span class="price">${{item.pricePerUnit}}</span> per item<br>({{item.price}} for {{item.units}} diapers)</div>
+			<div id="product_price">
+				<div id="product_price_text">BUY<br>NOW</div>
+			</div>
+			<div id="image_container">
+				<img class="product_image" ng-src={{item.image}} alt="Size {{item.size}} Diapers From {{item.brand | capitalize}}" title="Size {{item.size}} Diapers From {{item.brand | capitalize}}">
+			</div>
+			<div id="cta">
+				<div id="cta_text">Buy Size {{item.size}} Diapers<br>From {{item.brand | capitalize}}<br>{{item.vendor}}.com</span></div>
+			</div>
+		</div></a>
+	</div>
+</div>

@@ -1,5 +1,5 @@
 var app = angular.module('diapers_application',['ngRoute','ngAnimate']);
-
+console.log('module');
 /*////////////////////
 
 Angular Routing

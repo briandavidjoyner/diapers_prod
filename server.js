@@ -8,6 +8,7 @@ var Promise = require('promise');
 //Removed For Migration
 var bodyParser = require('body-parser');
 //var sm = require('sitemap');
+var morgan = require('morgan');
 
 
 //OpenShift Settings
@@ -24,6 +25,7 @@ Routing
 
 //App Middleware
 //app.use(require('prerender-node').set('prerenderToken', 'LKwpFQIjf1P3WG8uNEnD'));
+app.use(morgan('combined'));
 
 //var sitemap = sm.createSitemap({
 //	hostname: 'http://www.diapersdiapers.com',

@@ -7,7 +7,7 @@ var Promise = require('promise');
 //var email = require('./API/email/mailchimp.js');
 //Removed For Migration
 var bodyParser = require('body-parser');
-var sm = require('sitemap');
+//var sm = require('sitemap');
 
 
 //OpenShift Settings
@@ -23,20 +23,20 @@ Routing
 //App Configurations
 
 //App Middleware
-app.use(require('prerender-node').set('prerenderToken', 'LKwpFQIjf1P3WG8uNEnD'));
+//app.use(require('prerender-node').set('prerenderToken', 'LKwpFQIjf1P3WG8uNEnD'));
 
-var sitemap = sm.createSitemap({
-	hostname: 'http://www.diapersdiapers.com',
-	cacheTime: 600000,
-	urls: [
-		{url: '/', changefreq: 'daily', priority: 1},
-		{url: '/about', changefreq: 'monthly', priority: .9},
-		{url: '/brand/Pampers', changefreq: 'daily', priority: .9},
-		{url: '/brand/Huggies', changefreq: 'daily', priority: .9},
-		{url: '/brand/Luvs', changefreq: 'daily', priority: .9},
-		{url: '/guide/amazon_diaper_deals', changefreq: 'daily', priority: .9}
-	]		
-});
+//var sitemap = sm.createSitemap({
+//	hostname: 'http://www.diapersdiapers.com',
+//	cacheTime: 600000,
+//	urls: [
+//		{url: '/', changefreq: 'daily', priority: 1},
+//		{url: '/about', changefreq: 'monthly', priority: .9},
+//		{url: '/brand/Pampers', changefreq: 'daily', priority: .9},
+//		{url: '/brand/Huggies', changefreq: 'daily', priority: .9},
+//		{url: '/brand/Luvs', changefreq: 'daily', priority: .9},
+//		{url: '/guide/amazon_diaper_deals', changefreq: 'daily', priority: .9}
+//	]		
+//});
 
 app.get('/robots.txt', function (req, res) {
     res.type('text/plain');
@@ -56,15 +56,15 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/public', express.static(__dirname + '/ClientSide'));
 
 //App Sitemap
-app.get('/sitemap.xml', function(req,res){
-	sitemap.toXML( function(err,xml){
-		if (err) {
-			return res.status(500).end();
-		}
-		res.header('Content-Type','application/xml');
-		res.send(xml);
-	});
-});
+//app.get('/sitemap.xml', function(req,res){
+//	sitemap.toXML( function(err,xml){
+//		if (err) {
+//			return res.status(500).end();
+//		}
+//		res.header('Content-Type','application/xml');
+//		res.send(xml);
+//	});
+//});
 
 //Removed For Migration
 //App Database API

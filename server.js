@@ -167,3 +167,5 @@ app.get('*', function(req,res){
 app.listen(port, ipaddress, function(){
 	console.log('listening on port: ' + port + ' and IP: ' + ipaddress);	
 });
+
+module.exports = app;

@@ -6,9 +6,8 @@ var Promise = require('promise');
 //var start = require('./API/interval.js');
 //var email = require('./API/email/mailchimp.js');
 //Removed For Migration
-var bodyParser = require('body-parser');
+//var bodyParser = require('body-parser');
 //var sm = require('sitemap');
-var morgan = require('morgan');
 
 
 //OpenShift Settings
@@ -25,7 +24,6 @@ Routing
 
 //App Middleware
 //app.use(require('prerender-node').set('prerenderToken', 'LKwpFQIjf1P3WG8uNEnD'));
-app.use(morgan('combined'));
 
 //var sitemap = sm.createSitemap({
 //	hostname: 'http://www.diapersdiapers.com',
@@ -40,22 +38,22 @@ app.use(morgan('combined'));
 //	]		
 //});
 
-app.get('/robots.txt', function (req, res) {
-    res.type('text/plain');
-    res.send("User-agent: *\nDisallow: /9b1722d.html");
-});
+//app.get('/robots.txt', function (req, res) {
+//    res.type('text/plain');
+//    res.send("User-agent: *\nDisallow: /9b1722d.html");
+//});
 
 
 //Body Parsing For Data
-app.use(bodyParser.json({ type: 'application/json' }));
-app.use(bodyParser.urlencoded({ extended: true }));
+//app.use(bodyParser.json({ type: 'application/json' }));
+//app.use(bodyParser.urlencoded({ extended: true }));
 
 
 //Testing functions
 
 
 //Static Files
-app.use('/public', express.static(__dirname + '/ClientSide'));
+//app.use('/public', express.static(__dirname + '/ClientSide'));
 
 //App Sitemap
 //app.get('/sitemap.xml', function(req,res){
@@ -153,11 +151,11 @@ app.use('/public', express.static(__dirname + '/ClientSide'));
 //});
 
 //App Frontend Routes
-app.get('/19b1722d.html', function(req, res){
-	res.sendFile(__dirname + '/ClientSide/views/content/verification.html'), function(err){
-		console.log('Oh boy - this failed!');
-	}
-});
+//app.get('/19b1722d.html', function(req, res){
+//	res.sendFile(__dirname + '/ClientSide/views/content/verification.html'), function(err){
+//		console.log('Oh boy - this failed!');
+//	}
+//});
 
 app.get('*', function(req,res){
 	res.sendFile(__dirname + '/ClientSide/views/redesign/index.html'), function(err){

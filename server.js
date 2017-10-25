@@ -53,7 +53,7 @@ Routing
 
 
 //Static Files
-//app.use('/public', express.static(__dirname + '/ClientSide'));
+app.use('/public', express.static(__dirname + '/ClientSide'));
 
 //App Sitemap
 //app.get('/sitemap.xml', function(req,res){

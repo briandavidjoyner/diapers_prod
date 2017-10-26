@@ -51,7 +51,6 @@ Routing
 
 //Testing functions
 
-
 //Static Files
 app.use('/public', express.static(__dirname + '/ClientSide'));
 

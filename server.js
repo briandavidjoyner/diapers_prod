@@ -12,7 +12,7 @@ var Promise = require('promise');
 
 //OpenShift Settings
 var ipaddress = process.env.OPENSHIFT_NODEJS_IP || 'localhost';
-var port = process.env.OPENSHIFT_NODEJS_PORT || 3000;
+var port = process.env.OPENSHIFT_NODEJS_PORT || 3001;
 
 /*
 /////////////////////////////////////

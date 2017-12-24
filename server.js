@@ -1,12 +1,9 @@
 var express = require('express');
 var app = express();
 var Promise = require('promise');
-//Removed For Migration
-console.log(process.env);
-//var db = require('./Database/database.js');
-//var start = require('./API/interval.js');
-//var email = require('./API/email/mailchimp.js');
-//Removed For Migration
+var db = require('./Database/database.js');
+var start = require('./API/interval.js');
+var email = require('./API/email/mailchimp.js');
 var bodyParser = require('body-parser');
 var sm = require('sitemap');
 

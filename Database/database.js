@@ -6,17 +6,18 @@ var mongoose = require('mongoose');
 mongoose.Promise = require('promise');
 
 //Creds
-var username = process.env.OPENSHIFT_MONGODB_DB_USERNAME || 'admin';
-var key = process.env.OPENSHIFT_MONGODB_DB_PASSWORD || '_hLFA95AGgUg';
-var ip = process.env.OPENSHIFT_MONGODB_DB_HOST || '127.0.0.1';
-var port = process.env.OPENSHIFT_MONGODB_DB_PORT || '41661';
-var app = process.env.OPENSHIFT_APP_NAME || 'diapers';
+var username = process.env.MONGODB_USER;
+var key = process.env.MONGODB_PASSWORD;
+var ip = '127.0.0.1';
+var port = 27017;
+var database = process.env.MONGODB_DATABASE || 'datastore';
 
 //connect to DB
-mongoose.connect('mongodb://' + username + ':' + key + '@' + ip + ':' + port + '/' + app);
+mongoose.connect('mongodb://' + username + ':' + key + '@' + ip + ':' + port + '/' + database);
 var db = mongoose.connection;
 db.on('error', console.log.bind(console, 'connection error:'));
 db.once('open', function(){
+  console.log('db connected');
 });
 
 //model Schema

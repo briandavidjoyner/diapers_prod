@@ -21,22 +21,22 @@ Angular Routing
                     return {};
                 },
                 brandData : function(itemData){
-                    //return itemData.get_unique_field_values('brand').then(function(result){
-                    //    return result.data.sort();
-                    //});
-                    //return {};
+                    return itemData.get_unique_field_values('brand').then(function(result){
+                        return result.data.sort();
+                    });
+                    return {};
                 },
                 itemData : function(itemData){
-                    //return itemData.all().then(function(result){
-                    //    return result;
-                    //});
-                    //return {};
+                    return itemData.all().then(function(result){
+                        return result;
+                    });
+                    return {};
                 },
                 sizeData : function(itemData){
-                    //return itemData.get_unique_field_values('size').then(function(result){
-                    //    return result.data.sort(function(a, b){return a-b});
-                    //});
-                    //return {}; 
+                    return itemData.get_unique_field_values('size').then(function(result){
+                        return result.data.sort(function(a, b){return a-b});
+                    });
+                    return {}; 
                 }
             }
         }).when('/about', {

@@ -155,13 +155,12 @@ app.use('/public', express.static(__dirname + '/ClientSide'));
 //	}
 //});
 
-app.get('*', function(req,res){
-	res.sendFile(__dirname + '/ClientSide/views/redesign/index.html'), function(err){
-		console.log('Oh boy - this failed!');
-	}
+app.get('*', function (req, res) {
+	res.sendFile(__dirname + '/public/views/redesign/index.html');
 });
 
-//App Start
-app.listen(port, ip, function(){
-	console.log('listening on port: ' + port + ' and IP: ' + ipaddress);	
-});
+//app Initialize
+app.listen(port, ip);
+console.log('Server running on http://%s:%s', ip, port);
+
+module.exports = app;

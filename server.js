@@ -49,7 +49,7 @@ app.get('/robots.txt', function (req, res) {
 //Testing functions
 
 //Static Files
-app.use('/public', express.static(__dirname + '/ClientSide'));
+//app.use('/public', express.static(__dirname + '/ClientSide'));
 
 //App Sitemap
 /*app.get('/sitemap.xml', function(req,res){
@@ -155,8 +155,12 @@ app.use('/public', express.static(__dirname + '/ClientSide'));
 //	}
 //});
 
+//app.get('*', function (req, res) {
+//	res.sendFile(__dirname + '/public/views/redesign/index.html');
+//});
+
 app.get('*', function (req, res) {
-	res.sendFile(__dirname + '/public/views/redesign/index.html');
+	res.send('works');
 });
 
 //app Initialize

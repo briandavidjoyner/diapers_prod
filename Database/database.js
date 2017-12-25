@@ -1,27 +1,52 @@
+var Promise = require('promise');
+var mongoose = require ('mongoose');
+var username = process.env.MONGODB_USER;
+var password = process.env.MONGODB_PASSWORD;
+var database = process.env.MONGODB_DATABASE;
+
+//Comment Out For Production
+var url = 'mongodb://' + username + ':' + password + '@mongodb:27017/datastore';  //Only works on hst
+//var url = 'mongodb://' + username + ':' + password + '@127.0.0.1:27017/' + database;  //Works locally
+
+// Connect using MongoClient
+mongoose.connect(url, { useMongoClient: true });
+
+var db = mongoose.connection;
+  db.on('error', console.error.bind(console, 'connection error:'));
+  db.once('open', function() {
+      console.log('db connected');
+  });
+
+
+
 //For Local Testing, $rhc port-forward diapers
 
 //Modules
-var Promise = require('promise');
-var mongoose = require('mongoose');
-mongoose.Promise = require('promise');
+//var Promise = require('promise');
+//var mongoose = require('mongoose');
+//mongoose.Promise = require('promise');
 
 //Creds
-var username = process.env.MONGODB_USER;
-var key = process.env.MONGODB_PASSWORD;
-var ip = '127.0.0.1';
-var port = 27017;
-var database = process.env.MONGODB_DATABASE || 'datastore';
+//var username = process.env.MONGODB_USER;
+//var key = process.env.MONGODB_PASSWORD;
+//var ip = '127.0.0.1';
+//var port = 27017;
+//var database = process.env.MONGODB_DATABASE || 'datastore';
 
 //connect to DB
-mongoose.connect('mongodb://' + username + ':' + key + '@' + ip + ':' + port + '/' + database);
-var db = mongoose.connection;
-db.on('error', console.log.bind(console, 'connection error:'));
-db.once('open', function(){
-  console.log('db connected');
-});
+//mongoose.connect('mongodb://' + username + ':' + key + '@' + ip + ':' + port + '/' + database);
+//var db = mongoose.connection;
+//db.on('error', console.log.bind(console, 'connection error:'));
+//db.once('open', function(){
+//  console.log('db connected');
+//});
+
+
+
 
 //model Schema
 var item = mongoose.model('item',{
+  type: {type: String, required: true},
   vendor: {type: String, required: true},
   brand: {type: String, required: true},
   url: {type: String, required: true},

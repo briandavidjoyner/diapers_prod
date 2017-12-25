@@ -1,9 +1,9 @@
 var express = require('express');
 var app = express();
 var Promise = require('promise');
-var db = require('./Database/database.js');
-var start = require('./API/interval.js');
-var email = require('./API/email/mailchimp.js');
+//var db = require('./Database/database.js');
+//var start = require('./API/interval.js');
+//var email = require('./API/email/mailchimp.js');
 var bodyParser = require('body-parser');
 var sm = require('sitemap');
 
@@ -65,87 +65,88 @@ app.get('/sitemap.xml', function(req,res){
 
 //Removed For Migration
 //App Database API
-app.get('/api/remove', function(req,res){
-	db.remove().then(function(result){
-		res.send('removed');
-	}).catch(function(err){
-		res.send(err);
+/*	app.get('/api/remove', function(req,res){
+		db.remove().then(function(result){
+			res.send('removed');
+		}).catch(function(err){
+			res.send(err);
+		});
 	});
-});
 
-app.get('/api/getitems', function(req,res){
-	var items = db.retrieve().then(function(result){
-		res.send(result);
+	app.get('/api/getitems', function(req,res){
+		var items = db.retrieve().then(function(result){
+			res.send(result);
+		});
 	});
-});
 
-app.get('/api/getitemsbybrand/:brand', function(req,res){
-	var items = db.search('brand', req.params.brand).then(function(result){
-		res.send(result);
+	app.get('/api/getitemsbybrand/:brand', function(req,res){
+		var items = db.search('brand', req.params.brand).then(function(result){
+			res.send(result);
+		});
 	});
-});
 
-app.get('/api/getitemsbysize/:size', function(req,res){
-	var items = db.search('size', req.params.size).then(function(result){
-		res.send(result);
+	app.get('/api/getitemsbysize/:size', function(req,res){
+		var items = db.search('size', req.params.size).then(function(result){
+			res.send(result);
+		});
 	});
-});
 
-app.get('/api/getitemsbyboth/:brand/:size', function(req,res){
-	var items = db.search('both', {
-		brand : req.params.brand, 
-		size : req.params.size 
-	}).then(function(result){
-		res.send(result);
+	app.get('/api/getitemsbyboth/:brand/:size', function(req,res){
+		var items = db.search('both', {
+			brand : req.params.brand, 
+			size : req.params.size 
+		}).then(function(result){
+			res.send(result);
+		});
 	});
-});
 
-app.get('/api/getsizes/:query', function(req,res){
-	var sizes = db.unique_field_value(req.params.query).then(function(result){
-		res.send(result);
+	app.get('/api/getsizes/:query', function(req,res){
+		var sizes = db.unique_field_value(req.params.query).then(function(result){
+			res.send(result);
+		});
+	})
+
+	app.get('/api/random', function(req,res){
+		var number = parseFloat((Math.random()*100).toFixed(2));
+		var y_n  = (number > 50) ? ('yes') : ('no');
+		var toSend = {'show' : y_n, 'score' : number};
+		res.append('Access-Control-Allow-Origin','*');
+		res.json(toSend);
 	});
-})
 
-app.get('/api/random', function(req,res){
-	var number = parseFloat((Math.random()*100).toFixed(2));
-	var y_n  = (number > 50) ? ('yes') : ('no');
-	var toSend = {'show' : y_n, 'score' : number};
-	res.append('Access-Control-Allow-Origin','*');
-	res.json(toSend);
-});
-
-app.get('/api/wm', function(req,res){
-	var wally = require('./API/lookups/walmart.js');
-	wally.search().then(function(results){
-		res.json(results);
+	app.get('/api/wm', function(req,res){
+		var wally = require('./API/lookups/walmart.js');
+		wally.search().then(function(results){
+			res.json(results);
+		});
 	});
-});
 
-app.get('/api/am/brand/:brand/title/:title/page/:page', function(req,res){
-	var amazon = require('./API/lookups/amazon.js');
-	amazon.NewLookup(req.params.brand,req.params.title,req.params.page).then(function(results){
-		console.log(req.params.title);
-		res.json(results);
-	}).catch(function(err){
-		console.log(req.params.title);
-		res.json(err);
+	app.get('/api/am/brand/:brand/title/:title/page/:page', function(req,res){
+		var amazon = require('./API/lookups/amazon.js');
+		amazon.NewLookup(req.params.brand,req.params.title,req.params.page).then(function(results){
+			console.log(req.params.title);
+			res.json(results);
+		}).catch(function(err){
+			console.log(req.params.title);
+			res.json(err);
+		});
 	});
-});
 
-app.get('/api/am/:brand', function(req,res){
-	var amazon = require('./API/lookups/amazon.js');
-	amazon.Lookup(req.params.brand,1).then(function(results){
-		res.json(results);
+	app.get('/api/am/:brand', function(req,res){
+		var amazon = require('./API/lookups/amazon.js');
+		amazon.Lookup(req.params.brand,1).then(function(results){
+			res.json(results);
+		});
 	});
-});
+*/
 
 //App Email Submit API
-app.post('/api/email', function(req,res){
-	console.log(req.body.address + ' ' + req.body.brand + ' ' + req.body.size);
-	email.subscribe(req.body.address, req.body.brand, req.body.size).then(function(result){
-		res.json(result);
-	});
-});
+//		app.post('/api/email', function(req,res){
+//			console.log(req.body.address + ' ' + req.body.brand + ' ' + req.body.size);
+//			email.subscribe(req.body.address, req.body.brand, req.body.size).then(function(result){
+//				res.json(result);
+//			});
+//		});
 
 //App Frontend Routes
 app.get('/19b1722d.html', function(req, res){

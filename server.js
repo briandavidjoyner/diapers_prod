@@ -4,11 +4,11 @@ var Promise = require('promise');
 //var db = require('./Database/database.js');
 //var start = require('./API/interval.js');
 //var email = require('./API/email/mailchimp.js');
-var bodyParser = require('body-parser');
-var sm = require('sitemap');
+//var bodyParser = require('body-parser');
+//var sm = require('sitemap');
 
 //OpenShift Settings
-var ipaddress = process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0';
+var ip = process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0';
 var port = process.env.OPENSHIFT_NODEJS_PORT || 8080;
 
 /*
@@ -20,9 +20,9 @@ Routing
 //App Configurations
 
 //App Middleware
-app.use(require('prerender-node').set('prerenderToken', 'LKwpFQIjf1P3WG8uNEnD'));
+//app.use(require('prerender-node').set('prerenderToken', 'LKwpFQIjf1P3WG8uNEnD'));
 
-var sitemap = sm.createSitemap({
+/*var sitemap = sm.createSitemap({
 	hostname: 'http://www.diapersdiapers.com',
 	cacheTime: 600000,
 	urls: [
@@ -39,11 +39,11 @@ app.get('/robots.txt', function (req, res) {
     res.type('text/plain');
     res.send("User-agent: *\nDisallow: /9b1722d.html");
 });
-
+*/
 
 //Body Parsing For Data
-app.use(bodyParser.json({ type: 'application/json' }));
-app.use(bodyParser.urlencoded({ extended: true }));
+//app.use(bodyParser.json({ type: 'application/json' }));
+//app.use(bodyParser.urlencoded({ extended: true }));
 
 
 //Testing functions
@@ -52,7 +52,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/public', express.static(__dirname + '/ClientSide'));
 
 //App Sitemap
-app.get('/sitemap.xml', function(req,res){
+/*app.get('/sitemap.xml', function(req,res){
 	sitemap.toXML( function(err,xml){
 		if (err) {
 			return res.status(500).end();
@@ -61,6 +61,7 @@ app.get('/sitemap.xml', function(req,res){
 		res.send(xml);
 	});
 });
+*/
 
 //Removed For Migration
 //App Database API
@@ -148,11 +149,11 @@ app.get('/sitemap.xml', function(req,res){
 //		});
 
 //App Frontend Routes
-app.get('/19b1722d.html', function(req, res){
-	res.sendFile(__dirname + '/ClientSide/views/content/verification.html'), function(err){
-		console.log('Oh boy - this failed!');
-	}
-});
+//app.get('/19b1722d.html', function(req, res){
+//	res.sendFile(__dirname + '/ClientSide/views/content/verification.html'), function(err){
+//		console.log('Oh boy - this failed!');
+//	}
+//});
 
 app.get('*', function(req,res){
 	res.sendFile(__dirname + '/ClientSide/views/redesign/index.html'), function(err){
@@ -161,6 +162,6 @@ app.get('*', function(req,res){
 });
 
 //App Start
-app.listen(port, ipaddress, function(){
+app.listen(port, ip, function(){
 	console.log('listening on port: ' + port + ' and IP: ' + ipaddress);	
 });
